@@ -1,0 +1,1301 @@
+/* Importación de fuentes de Google */
+@import url('https://fonts.googleapis.com/css2?family=Fenix&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,100;1,300;1,400&display=swap');
+
+/* Definición de variables de color */
+:root{
+    --main-color: #145533
+}
+
+/* Estilos generales para el documento */
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Altura del elemento HTML */
+html{
+    height: 2000px;
+}
+
+
+/* Estilos para el encabezado */
+header{
+    width: 100%;
+    padding: 15px 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1111;
+    transition: .5s ease-in-out; 
+
+}
+
+/* Estilos para el logo en el encabezado */
+
+header .logo img{
+    width: 35px;
+    margin-top: -5px;
+}
+
+header .logo a{
+    font-size: 30px;
+    font-family: 'Fenix', serif;
+    color: #145533; 
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+/* Estilos para los elementos de lista en el encabezado */
+header ul{
+    display: flex;
+    margin: 0;
+}
+
+/* Estilos para los elementos de lista en el encabezado */
+header ul li{
+    margin: 0px 15px;
+}
+
+/* Estilos para los enlaces en el encabezado */
+header ul li a{
+    text-decoration: none;
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    transition: .4s;
+}
+
+header ul li a:hover{
+    color:  #059b4d;
+}
+
+
+/* Estilos para el ícono del menú en el encabezado */
+header .menu-icon{
+    font-size: 30px;
+    color: #000;
+    cursor: pointer;
+    display: none;
+}
+
+
+
+
+header .menu-icon.active {
+    cursor: pointer;
+}
+
+/* Estilos para el encabezado activo */
+header.active{
+    background: #fff;
+    box-shadow: 1px 0px 0px #DDD;
+}
+
+header.active .logo a{
+    color: var(--main-color);
+}
+
+header.active ul li a{
+    color: var(--main-color);
+
+} 
+
+/*NO MG
+header.active .menu-icon .fa-bars{
+    padding: 4px 5px0;
+    color: #145533;
+    background-color:#059b4d;
+    width: 28px;
+}*/
+
+@media(max-width:991px){
+
+    header .navigation{
+        position: absolute;
+        top: 75px;
+        right:-50%;
+        width: 50%;
+        height: 100vh;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition: .5s ease-in-out;
+        box-shadow: -1px 0px 0px #DDD;
+    }
+
+    header .navigation li{
+        margin: 11px 0px ;
+    }
+
+    header .navigation li a{
+        color: var(--main-color);
+
+    }
+
+    header .menu-icon{
+        display: block;
+    }
+}
+
+
+
+/* Estilos para las secciones con imagen de fondo */
+.big-bg{
+    background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url(/images/rev3.avif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* Estilos para el contenido dentro de las secciones con imagen de fondo */
+.big-bg .bg-content{
+    color: #fff;
+}
+.big-bg .bg-content h1{
+    font-size: 60px;
+}
+.big-bg .bg-content hr{
+background: #fff;
+height: 1px;
+width: 50%;
+margin: 15px auto;
+}
+
+/* Estilos para el enlace dentro del contenido de las secciones con imagen de fondo */
+
+.big-bg .bg-content .bg-link{
+    margin-top: 20px;
+} 
+
+.big-bg .bg-content .bg-link a{
+text-decoration: none;
+color: #fff;
+font-size: 17px;
+text-transform: capitalize;
+padding: 12px 20px;
+border: 2px solid #fff;
+display: inline-block ;
+position: relative;
+overflow: hidden ;
+z-index: 1;
+
+}
+
+
+.bg-link a::before{
+content: "";
+position: absolute;
+top: 0px;
+left: -100%;
+background: #145533;
+width: 100%;
+height: 100%;
+transition: .4s ease-in-out;
+z-index: -1;
+}
+
+.bg-link a:hover::before{
+    left: 0%;
+}
+
+/* Estilos para la colección de imágenes horizontales */
+
+.big-collection{
+    display: grid;
+    place-items: center;
+    width: 100%;
+    margin: 100px auto;
+    background-color: #f8f8f8;
+    padding: 20px 0;
+    overflow: hidden; /* Asegura que no haya desbordamiento visible */
+   
+}
+.big-collection .collect-flex{
+    display: flex;
+    justify-content: center; /*space-betwen*/
+    align-items: center;
+    flex-wrap: wrap;
+    /*grid-row-gap: 15px ;*/
+    gap: 20px;
+
+    width: max-content;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden; /* Oculta cualquier desbordamiento horizontal */
+    animation: scrollBanner 80s linear infinite;
+}
+
+@keyframes scrollBanner {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-20%);
+    }
+}
+
+
+.big-collection .collect-flex .collect{
+    margin: 0px 10px;
+    text-align: center;
+}
+
+.big-collection .collect-flex .link{
+    margin-top: 20px;
+}
+
+.collect-flex .link a{
+    text-decoration: none;
+    color: var(--main-color);
+    text-transform: capitalize;
+    position: relative;
+    display: inline-block;
+}
+
+/* Estilos para las imágenes y enlaces dentro de la colección de imágenes horizontales */
+
+.collect-flex .link a::before{
+    content: "";
+    position: absolute;
+    background: var(--main-color);
+    top: 23px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    transform: scale(0);
+    transition: .5s ease-in-out;
+}
+
+.collect-flex .collect:hover .link a::before{
+    transform: scale(1);
+}
+
+.collect-flex .collect .image{
+    position: relative; 
+}
+
+
+.collect-flex .collect .image::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: 2px solid transparent;/*CONTORNO DE LAS IMAGNES*/
+}
+
+.big-collection .collect-flex .collect .image img {
+    max-width: 220PX; /* Ajusta según tus necesidades */
+    max-height: 220PX; /* Ajusta según tus necesidades */
+    width: 100%; /* Para asegurar que la imagen no supere el tamaño máximo definido */
+    height: auto; /* Para mantener la proporción de la imagen */
+}
+/* Animación para las imágenes dentro de la colección de imágenes horizontales */
+
+.collect-flex .collect:hover .image::before{
+    animation: animate1 .8s linear forwards;
+}
+
+@keyframes animate1{
+    0%{
+        width: 0;
+        height: 0;
+        border-top-color: var(--main-color);
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color:transparent ;
+    }
+    50%{
+        width: 100%;
+        height: 0;
+        border-top-color: var(--main-color);
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color:transparent ;
+
+    }
+    100%{   
+        width: 100%;
+        height: 100%;
+        border-top-color: var(--main-color);
+        border-right-color: var(--main-color);
+        border-bottom-color: transparent;
+        border-left-color:transparent ;
+    }
+}
+
+.collect-flex .collect .image::after{
+    content: "";
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: 2px solid transparent;
+}
+
+.collect-flex .collect:hover .image::after{
+    animation: animate2 .8s linear forwards;
+}
+@keyframes animate2 {
+    0%{
+        width: 0;
+        height: 0;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color:var(--main-color) ;
+    }
+    50%{
+        width: 0;
+        height: 100%;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: var(--main-color);
+    }
+    100%{
+        width: 100%;
+        height: 100%;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: var(--main-color);
+        border-left-color: var(--main-color) ;
+    }
+}
+
+
+@media(max-width: 1230px){
+    .big-collection .collect-flex{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+/* Estilos para la sección de productos */
+.shop{
+    width: 99%;
+    margin: 120px auto;/*200px  120*/
+    background-color: #f8f8f8; 
+    padding: 50px 0;
+    
+}
+
+/* Estilos para el título de la sección de productos */
+.shop .shop-title{
+    margin-bottom: 50px;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 5px;
+}
+
+.shop-title h2{
+    font-weight: 700;
+    font-family: 'Fenix', serif;
+}
+
+.shop-title p{
+    font-size: 15px;
+}
+
+/* Estilos para la disposición de los productos */
+.shop .shop-flex{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: -2%;/* Desplaza hacia arriba el contenedor un 4% de su altura original, creando un efecto de superposición.*/
+}
+
+
+/* Estilos para la caja de información en los productos */
+.shop-flex .shop-one{
+    width: 26%;
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+/* Estilos para las imágenes en la sección de productos */
+.shop-flex .shop-one img{
+    width: 100%;
+    height: auto;
+}
+
+/* Estilos para la tercera caja de información en los productos */
+.shop-three{
+    width: 44%;
+}
+
+/* Estilos para la tercera caja de información en los productos */
+.shop-three img{
+    width: 100%;
+}
+
+/**/
+
+
+.shop-flex .shop-one .image-one{ 
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.shop-one .overly{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+    text-align: center;
+    padding: 0px 20px;
+    color: #fff;
+    visibility: hidden;
+    transition: .5s ease-in-out;
+}
+
+.shop-one .overly section{
+    font-size: 15px;
+
+}
+ 
+.shop-one .overly h3{
+    margin-bottom: 3px;
+}
+.shop-one .overly span{
+    color: #4abcc6;
+}
+
+
+.shop-one .overly .link{
+    position: absolute;
+    bottom: 19px ;/*50px*/
+    cursor: pointer;
+}
+
+
+.overly .link a{
+    text-decoration:none ;
+    color: #fff;
+    text-transform: capitalize;
+    display: inline-block;
+    position: relative;
+    padding-bottom: 3px;
+    overflow: hidden;
+}
+
+.overly .link i{
+    vertical-align: middle ;
+}
+
+.overly .link a::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100% ;
+    height: 2px;
+    background: #fff ;
+    transition: .5s ease-in-out;
+}
+
+.overly .link a:hover::before{
+    left: 0;
+}
+
+.shop-one .image-one:hover  .link{
+    animation: linking .8s ease-in-out forwards;
+}
+
+
+.shop-one .image-one:hover .overly{
+    visibility: visible;
+}
+
+
+.shop-flex .shop-three{
+    position: relative;
+    height: 100%;
+}
+.shop-three .overly{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    display: flex;
+    flex-direction: column; /* Cambiamos la dirección del flex container */
+    align-items: center;
+    justify-content: flex-end; /* Alineamos el contenido en la parte inferior */
+    padding: 0px 20px;
+    /*text-align: center;*/
+    color: #fff;
+    visibility: hidden;
+    transition: .5s ease-in-out;
+}
+
+
+/* ... Aguregue ... */
+.shop-three .overly section {
+    font-size: 15px;
+}
+
+.shop-three .overly h3 {
+    margin-bottom: 2px;
+}
+
+.shop-three .overly span {
+    color: #4abcc6;
+}
+
+.shop-three .overly .link {
+    margin-top: 50%; /* Mueve el enlace a la parte inferior */
+}
+
+
+/* ... agregue lo de arriba  ... */
+
+
+/* Efecto de animación para los enlaces en la tercera caja de información en los productos */
+
+ .shop-three:hover  .link{
+    animation: linking .8s ease-in-out forwards;
+} 
+
+.shop-three:hover .overly{
+    visibility: visible;
+}
+
+/* Efecto de animación para el texto en la tercera caja de información en los productos */
+
+.shop-three:hover .txt{
+    animation: header .8s ease-in-out forwards;
+}
+
+
+@keyframes linking{
+    0%{
+        opacity: 0;
+        bottom: 0px;
+    }
+    100%{
+        opacity: 1;
+        bottom: 2px;/*30px AJUSTAR BIEN*/
+    }
+}
+
+
+.shop-one .image-one  .link{
+    animation: linking2 .8s ease-in-out forwards;
+}
+@keyframes linking2{
+    0%{
+        opacity: 1;
+        bottom: 1px; /*AJUSTAR BIEN*/
+    }
+    100%{
+        opacity: 0;
+        bottom: 0px;
+    }
+}
+
+
+.shop-one .image-one:hover .text{
+    animation:  header .8s ease-in-out forwards;
+}
+
+@keyframes header{
+    0%{
+        opacity: 0;
+        margin-bottom: 70px;
+    }
+    100%{
+        opacity: 1;
+        margin-bottom: 0%;
+    }
+}
+
+.shop-one .image-one .text{
+    animation:  header2 .8s ease-in-out forwards;
+}
+
+@keyframes header2 {
+    0%{
+        opacity: 1;
+        margin-bottom: 0px;
+    }
+    100%{
+        opacity:0;
+        margin-bottom: 70%;
+    }
+}
+
+/* Estilos para la sección de productos en pantallas pequeñas */
+@media(max-width: 991px){
+    .shop-flex .shop-one{
+       width: 49%; 
+    }
+    .shop-flex .shop-three{
+        width: 100% ;
+    }
+}
+/* Estilos para la sección de productos en pantallas muy pequeñas */
+@media(max-width: 576px){
+    .shop-flex .shop-one{
+        width: 100%; 
+     }
+}
+
+/* Estilos para la sección de productos2 caracteristicas */
+
+.big-product{
+    width: 99%;
+    margin: 120px auto;
+    margin-top: -4%;/* Desplaza hacia arriba el contenedor un 4% de su altura original, creando un efecto de superposición.*/
+    background-color: #f8f8f8; /* color de fondo */
+    padding: 50px 0; /*  espacio interno superior e inferior */
+}
+
+/* Estilos para el título de la sección de productos grandes */
+.big-product .product-title{
+    margin-bottom: 50px;
+    text-align: center;
+}
+/*Estilos específicos para los párrafos dentro del título.*/
+.big-product .product-title p{
+    margin-bottom: 2px;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+.big-product .product-title h2{
+    font-weight: 600;
+}
+
+/*Estilos para la línea horizontal dentro del título.*/
+.big-product .product-title hr{
+    width: 200px;
+    margin: 15px auto;
+    background-color: #145533;
+}
+/* Estilos para la disposición de los productos.*/
+.big-product .product-flex{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.product-flex .product-one{
+    width: 24%;
+    margin-bottom: 20px;
+}
+.product-flex .product-one img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product-flex .product-one .product-image{
+    position: relative;
+}
+
+
+.product-one .product-image .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(249, 249, 249, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity .4s ease-in-out;
+}
+
+/* Efecto de animación para los íconos de productos */
+.product-image .overlay i{
+margin: 0px 5px ;
+padding: 5px;
+border: 1px solid #000;
+font-size: 13px;
+cursor: pointer;
+opacity: 0;
+}
+
+.product-image .overlay i.fa-heart.active {
+    color: var(--main-color); /* o verde, ajusta según sea necesario */
+}
+
+.product-one:hover .product-image .overlay i{
+    animation: product_icon .5s ease-in-out forwards;
+}
+
+.product-one:hover .product-image .overlay i:nth-child(2){
+    animation-delay:.2s ;
+}
+
+.product-one:hover .product-image .overlay i:nth-child(3){
+    animation-delay:.4s ;
+}
+
+.product-one:hover .overlay{
+    opacity:1 ;
+}
+
+.product-one .product-image {
+margin-bottom: 15px ;
+}
+
+/*Define la animación product_icon con un cambio de opacidad y margen.*/
+@keyframes product_icon{
+    0%{
+        opacity: 0;
+        margin-bottom: 50px;
+    }
+    100%{
+        opacity: 1;
+        margin-bottom: 0px;
+    }
+}
+
+/* Estilos para el contenido de cada producto */
+.product-one .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 7px;
+}
+
+.product-one .content h4{
+    margin: 0;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+.product-one .content section{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.product-one article{
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+@media(max-width: 991px){
+    .big-product .product-one{
+        width: 32%;
+    }
+}
+
+@media(max-width: 768px){
+    .big-product .product-one{
+        width: 49%;
+    }
+}
+
+@media(max-width: 576px){
+    .big-product .product-one{
+        width: 100%;
+    }
+    .big-product .product-title h2{
+        font-size: 19px;
+    }
+    .big-product .product-title hr{
+        width: 100%;
+    }
+}
+
+/* Estilos para la sección con video de fondo.*/
+.bg-show{
+    position: relative;
+    background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(/images/STOYCO-F.jpg) ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 100px 0px;/*300px 0px*/
+    margin: 100px 0px;/*100px 0px*/
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+}
+
+.bg-show .link{
+    width: 200px;
+    height: 200px;
+    border: 1px solid #f9f9f9 ;
+    text-align: center;
+    line-height: 200px;
+    border-radius: 50%;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+.bg-show .link:hover{
+    border-color: rgb(153, 153, 153);
+}
+
+.bg-show .link a{
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: .2s ease-in-out;
+    color: #fff;
+}
+
+.bg-show .link img{
+    width: 2.2rem;
+    vertical-align: middle;
+    margin-left: -5px;
+}
+
+
+.bg-show .overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    z-index: 111;
+    display: none;
+}
+/* Estilos para la imagen y el video en la sección*/
+.bg-show .image{
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+
+.bg-show .image .cancel{
+    position: absolute;
+    top: -4%;/*-7%*/
+    right: 0;
+    width: 17px;
+    cursor: pointer;
+}
+
+.bg-show .image .bg-player{
+position: absolute;
+bottom: 5px;
+right: 0;
+cursor: pointer;
+width: 50px;
+margin-right: -28px;
+}
+
+.bg-show .bg-player img{
+width: 45%;
+}
+
+.bg-show .image{
+    animation: video is ease-in-out forwards;
+}
+
+.bg-show .image video {
+    width: 100%; /* Hace que el video sea del 100% del ancho del contenedor */
+    max-width:450px; /* Establece un ancho máximo para el video */
+    animation: video is ease-in-out forwards;
+   height: auto;
+}
+
+@keyframes video {
+    0%{
+        opacity: 0;
+        top: 20%;
+    }
+    100%{
+        opacity: 1;
+        top: 50%;
+    } 
+}
+
+@media(min-width: 992px){
+    .bg-show .image video{
+        width: 700px;
+    }
+}
+
+@media(max-width: 991px){
+    .bg-show .image video{
+        width: 600px;
+    }
+}
+
+@media(max-width: 768px){
+    .bg-show .image video{
+        width: 450px;
+    }
+}
+
+@media(max-width: 576px){
+    .bg-show .image video{
+        width: 400px;
+    }
+}
+
+@media(max-width: 401px){
+    .bg-show .image video{
+        width: 200px;
+    }
+}
+
+
+ /* Estilos para la sección de contacto */
+
+.contact {
+    margin-bottom: 80px; /* Agregamos margen en la parte inferior */
+    min-height: 70vh;/* altura de la sección */
+    background-color: #f8f8f8; /* Color de fondo ajustado */
+    padding: 3rem 0;/*espacio interno, tenia 4 */
+}
+
+/* Estilos para el título de la sección de contacto */
+
+.contact h1.heading {
+    text-align: center; /* Centra el título */
+    font-weight: 600;
+}
+
+/* Estilos para la disposición de las cajas de contacto */
+
+.contact-box-container {
+    width: 90%;/* Reducimos el ancho 93% del contenedor a 90 */
+    margin: 0 auto; /* Centramos el contenedor */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Distribuye los elementos horizontalmente */
+}
+
+/* Estilos para las cajas de contacto */
+.contact-box-container .contact-box {
+    height: 10rem; 
+    flex: 1 0 calc(30% - 4rem); /* Reducir el espacio entre las cajas  a 2rem*/
+    margin: 2rem;/*reducir a 1*/
+    box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .2);
+    border-radius: .5rem;
+    text-align: center;
+    padding-top: 3rem ; 
+    background-color: #fff;
+}
+
+/* Estilos para los íconos en las cajas de contacto */
+.contact-box-container .contact-box i {
+    color: var(--main-color); 
+    font-size: 2rem; /*tamaño del ícono */
+}
+
+/* Estilos para los títulos en las cajas de contacto */
+
+.contact-box-container .contact-box h3 {
+    font-size: 1.2rem; /* Tamaño de texto */
+    color: #333; 
+    margin: 1rem 0; 
+}
+
+/* Estilos para los enlaces en las cajas de contacto */
+.contact-box-container .contact-box a {
+    
+    text-decoration: none; /* Elimina el subrayado predeterminado */
+    color: #333; /* Color del texto del enlace */
+    font-weight: 600; /* texto  más audaz */
+}
+
+.contact-box-container .contact-box a:hover {
+    text-decoration: underline; /* Subrayado al pasar el cursor sobre el enlace */
+    
+    color: var(--main-color); /* Cambia el color del texto al pasar el cursor */
+    cursor: pointer;
+}
+
+/*LOGO DE WSP*/
+.z-50 {
+    z-index: 50;
+}
+
+.right-5 {
+    right: 1.25rem; /* Cambiado a 0 para que esté en el lado derecho de la página */
+}
+
+.fixed {
+    position: fixed;
+}
+
+/* Ajustes en el tamaño de la imagen del logo */
+.w-10 {
+    width: 2.5rem; /* Tamaño reducido a 2.5rem */
+}
+
+.h-10 {
+    height: 2.5rem; /* Tamaño reducido a 2.5rem */
+}
+
+/* Resto de las clases permanecen igual */
+.bottom-20 {
+    bottom: 5rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+
+#whatsappButton {
+    position: fixed;
+    bottom: 20px;
+    right: 5px;
+    z-index: 50;
+}
+
+@media (max-width: 576px) {
+    #whatsappButton {
+        bottom: 10px; /* Ajusta según sea necesario */
+    }
+}
+
+
+
+.footer-image{
+    background-color: var(--main-color);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-image .image1{
+    width: 16.6%;
+    position: relative;
+}
+.footer-image .image1 img{
+    width: 100%;
+}
+
+.footer-image .insta{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 99%;
+    background: rgba(0,0,0,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .4s ease-in-out;
+    opacity: 0;
+}
+.footer-image .insta img{
+    width: 30px;
+    cursor: pointer;
+}
+
+.footer-image .image1:hover .insta{
+opacity: 1;
+}
+    
+.footer-image .image1:hover .insta img{
+    animation: instagram .5s ease-in-out;
+}
+
+@keyframes instagram {
+    0%{
+        opacity: 0;
+        margin-bottom: 30px;
+    }
+    100%{
+        opacity: 1;
+        margin-bottom: 0px;
+    }
+}
+
+@media(max-width: 768px){
+    .footer-image .image1{
+        width: calc(100% / 3)
+    }
+}
+
+@media(max-width: 576px){
+    .footer-image .image1{
+        width: calc(100% / 2)
+    }
+}
+
+@media(max-width: 300px){
+    .footer-image .image1{
+        width: 100%; 
+    }
+}
+
+
+
+
+/* Estilos para el pie de página */
+
+.footer {
+    background: var(--main-color);
+    text-align: center;
+    color: #fff;
+    padding: .9rem 0;
+}
+.footer .row {
+    width: 100%;
+    margin-left: 0;
+    padding: 1rem;
+}
+.footer .row .col-md-3 {
+    margin-right: auto;
+}
+.footer .row .col-md-3 img {
+    width: 200px;
+    height: auto;
+    text-align: center;
+}
+.footer h2 {
+    font-size: 1.5rem;
+}
+.footer p {
+    font-size: 0rem;
+    
+}
+.footer .list {
+    display: flex;
+    flex-flow: column;
+}
+.footer .list a {
+    color: #ccc;
+    font-size: 1.2rem;
+}
+
+.footer .letter p {
+    font-size: 1.2rem;
+}
+
+.footer .letter input[type="email"] {
+    outline: none;
+    border: none;
+    background: none;
+    padding: 0 1rem;
+    color: #fff;
+    height: 2.5rem;
+    width: 100%;
+    border: .1rem solid #fff;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.footer .letter input[type="submit"] {
+    outline: none;
+    border: none;
+    background: #fff;
+    margin: 1rem 0;
+    width: 8rem;
+    font-size: 1.1rem;
+}
+
+.footer .letter input[type="submit"]:hover {
+    background: var(--main-color);
+    color: #fff;
+}
+
+.footer .credit {
+    width: 100%;
+    text-align: center;
+    font-size: .9rem;
+    padding: 1rem 0;
+    margin: 1rem 0;
+    margin-bottom: 0;
+    border-top: .1rem solid #aaa;
+    letter-spacing: .1rem;
+}
+
+.footer .credit span {
+    font-size: .9rem;
+    color: #4abcc6;
+}
+
+
+/*
+footer{
+    background-color: var(--main-color);
+}
+
+
+.footerContainer{
+    width: 100%;
+    padding: 70px 30px 20px;
+}
+
+.socialIcons{
+    display: flex;
+    justify-content: center;
+}
+
+.socialIcons a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.socialIcons a i{
+    font-size: 2em;
+    color: var(--main-color);
+    opacity: 0.9;
+}
+
+.socialIcons a:hover{
+    background-color: #DDD;
+    transition: 0.5s;
+}
+
+
+
+.footercredit {
+    width: 100%;
+    text-align: center;
+    font-size: .5rem;
+    padding: 1rem 0;
+    margin: 1rem 0;
+    margin-bottom: 0;
+    border-top: .1rem solid #aaa;
+    letter-spacing: .1rem;
+}
+
+.footercredit .credit span {
+    font-size: .9rem;
+    color: #DDD;
+}
+*/
