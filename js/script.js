@@ -1,5 +1,18 @@
-
 function myNav(){
+    let bar = document.getElementById("bar");
+    let nav = document.querySelector(".navigation");
+    bar.onclick = ()=>{
+        if(nav.style.right == "0%"){
+            nav.style.right = "-50%";
+            bar.src = "images/menu.nav2.png" ;
+        }else{
+            nav.style.right = "0%";
+            bar.src = "images/X.png" ;
+        }
+    }
+}
+myNav();
+/*function myNav(){
     let bar = document.getElementById('fa-bars');
     let nav = document.querySelector('.navigation');
     bar.onclick = () => {
@@ -12,8 +25,7 @@ function myNav(){
         }
     };
 }
-
-myNav();
+myNav();*/
 
 function myHeader(){
     let header = document.getElementById("header");
