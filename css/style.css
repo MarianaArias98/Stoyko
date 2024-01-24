@@ -17,8 +17,11 @@
 
 /* Altura del elemento HTML */
 html{
-    height: 2000px;
-    
+    margin: 0;
+    height: 2000px; 
+}
+body {
+    margin: 0;
 }
 
 
@@ -37,24 +40,27 @@ header{
 
 }
 header .logo img{
-    width: 35px;
+    width: 35px;/*25px*/
     margin-top: -5px;
 }
 
 header .logo a{
-    font-size: 30px;
+    font-size: 30px;/*24px*/
     font-family: 'Fenix', serif;
     color: #145533; 
     text-decoration: none;
     text-transform: capitalize;
 }
+
 header ul{
     display: flex;
     margin: 0;
 }
+
 header ul li{
     margin: 0px 15px;
 }
+
 header ul li a{
     text-decoration: none;
     display: block;
@@ -106,9 +112,9 @@ header.active ul li a{
     header .navigation{
         position: absolute;
         top: 75px;
-        right:-50%;
-        width: 50%;
-        height: 100vh;
+        width: 50%; /* Cambia el ancho al 100% */
+        right: -50%; /* Inicialmente fuera de la pantalla */
+        height: 92vh;
         background: #fff;
         display: flex;
         align-items: center;
@@ -129,31 +135,44 @@ header.active ul li a{
 }
 
 /* Estilos para las secciones con imagen de fondo */
+#home {
+    margin: 0;
+}
 .big-bg{
     background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url(/images/rev3.avif);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;/*height: 100vh;*/
+    padding: 20px; /* Añadir relleno para evitar que el contenido toque los bordes */
+    box-sizing: border-box; /* Asegurarse de que el relleno se incluya en el ancho total */
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
+
 .big-bg .bg-content{
     color: #fff;
+    width: 100%;
+    max-width: 100%; /* 800px Ajustar según sea necesario para mantener el diseño deseado */
+    margin: 0 auto; /* Centrar el contenido */
 }
+
 .big-bg .bg-content h1{
     font-size: 60px;
+
 }
+
 .big-bg .bg-content hr{
 background: #fff;
 height: 1px;
 width: 50%;
 margin: 15px auto;
 }
+
 .big-bg .bg-content .bg-link{
     margin-top: 20px;
 } 
@@ -185,16 +204,46 @@ z-index: -1;
     left: 0%;
 }
 
+/* Ajustes para la sección .big-bg en pantallas más pequeñas */
+@media (max-width: 438px) {
+    .big-bg .bg-content h1 {
+        font-size: 40px; /* Reduzca el tamaño del texto */
+    }
+    .big-bg .bg-content .bg-link a {
+        font-size: 14px; /* Reduzca el tamaño del enlace */
+    }
+}
+
+/* Media query para Samsung Galaxy Fold */
+@media (max-width: 280px) and (max-height: 653px) {
+    /* Ajustes para la sección .big-bg */
+    .big-bg {
+        padding: 10px; /* Ajusta el relleno según sea necesario */
+    }
+    .big-bg .bg-content h1 {
+        font-size: 30px; /* Ajusta el tamaño de la fuente según sea necesario */
+    }
+    .big-bg .bg-content p {
+        font-size: 14px; /* Ajusta el tamaño del texto según sea necesario */
+    }
+    .big-bg .bg-content .bg-link a {
+        font-size: 12px; /* Ajusta el tamaño del enlace según sea necesario */
+        padding: 8px 15px; /* Ajusta el relleno del enlace según sea necesario */
+    }
+
+    
+}
+
 /* Estilos para la colección de imágenes horizontales */
 .big-collection{
     width: 90%;/*90% NO 100*/
-    margin: 100px auto;
-    overflow: hidden; /* Asegura que no haya desbordamiento visible */
+    margin: 100px auto 0;
+    overflow: hidden; 
     background-color: #f8f8f8;
     padding: 20px 0;
     display: grid;
     place-items: center;
-   
+    position: relative;
 }
 .big-collection .collect-flex{
     display: flex;
@@ -224,6 +273,7 @@ z-index: -1;
 .big-collection .collect-flex .collect{
     margin: 0px 10px;
     text-align: center;
+    
 }
 
 .big-collection .collect-flex .link{
@@ -269,8 +319,8 @@ z-index: -1;
 }
 
 .big-collection .collect-flex .collect .image img {
-    max-width: 220PX; /* Ajusta según tus necesidades */
-    max-height: 220PX; /* Ajusta según tus necesidades */
+    max-width: 220px; /* Ajusta según tus necesidades */
+    max-height: 220px; /* Ajusta según tus necesidades */
     width: 100%; /* Para asegurar que la imagen no supere el tamaño máximo definido */
     height: auto; /* Para mantener la proporción de la imagen */
 }
@@ -348,18 +398,13 @@ z-index: -1;
 }
 
 
-@media(max-width: 1230px){
-    .big-collection .collect-flex{
-        display: flex;
-        justify-content: center;
-    }
-}
+
 
 
 /* Estilos para la sección de productos */
 .shop{
     width: 90%;/*90  NO 99*/
-    margin: 120px auto;/*200px   ESTO TAMB 120*/
+    margin: 120px auto;/*200px   ESTO TAMB 120px auto*/
     background-color: #f8f8f8; 
     padding: 50px 0;
     
@@ -384,7 +429,7 @@ z-index: -1;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: -2%;/* Desplaza hacia arriba el contenedor un 4% de su altura original, creando un efecto de superposición.*/
+    
 }
 
 
@@ -649,6 +694,7 @@ z-index: -1;
 }
 .product-flex .product-one .product-image{
     position: relative;
+
 }
 
 .product-one .product-image .overlay{
@@ -806,6 +852,8 @@ margin-bottom: 15px ;
     background: rgba(0,0,0,.5);
     z-index: 111;
     display: none;
+
+
 }
 /* Estilos para la imagen y el video en la sección*/
 .bg-show .image{
@@ -814,9 +862,12 @@ margin-bottom: 15px ;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: .3s ease-in-out;
+   
     display: flex;/**/
     flex-direction: column;/**/
-    align-items: flex-end;/**/
+    /*align-items: flex-end;*/
+    align-items: center; /* Ajustado a centrar verticalmente */
+   
 
 }
 
@@ -898,11 +949,9 @@ width: 45%;/*35*/
 
 .contact {
     width: 90%;
-    margin: 120px auto; /* Ajustar según sea necesario */
-    min-height: 60vh;
+    margin: 50px auto; /* Ajustar según sea necesario */
     background-color: #f8f8f8;
     padding: 50px 0;
-    height: 65vh; /* Mismo valor de altura que en .shop */
 }
 
 /* Estilos para el título de la sección de contacto */
@@ -915,7 +964,8 @@ width: 45%;/*35*/
 /* Estilos para la disposición de las cajas de contacto */
 
 .contact-box-container {
-    width: 93%;/* Reducimos el ancho 93% del contenedor a 90 */
+    width: 90%;/* Reducimos el ancho 93% del contenedor a 90 */
+    max-width: 1200px;
     margin: 0 auto; /* Centramos el contenedor */
     display: flex;
     flex-wrap: wrap;
@@ -924,13 +974,12 @@ width: 45%;/*35*/
 
 /* Estilos para las cajas de contacto */
 .contact-box-container .contact-box {
-    height: 11rem; 
-    flex: 1 0 calc(30% - 4rem); /* Reducir el espacio entre las cajas  a 2rem*/
-    margin: 2rem;/*reducir a 1*/
+    flex: 1 0 calc(30% - 20px); /* Ajusta el espacio entre las cajas y la anchura */
+    margin: 20px;
     box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .2);
     border-radius: .5rem;
     text-align: center;
-    padding-top: 3rem ; 
+    padding: 20px;
     background-color: #fff;
 }
 .contact-box-container .contact-box i {
@@ -950,70 +999,47 @@ width: 45%;/*35*/
 
 .contact-box-container .contact-box a:hover {
     text-decoration: underline; /* Subrayado al pasar el cursor sobre el enlace */
-    
     color: var(--main-color); /* Cambia el color del texto al pasar el cursor */
     cursor: pointer;
 }
-
-/*LOGO DE WSP
-.z-50 {
-    z-index: 50;
-}
-
-.right-5 {
-    right: 1.25rem; 
-}
-
-.fixed {
-    position: fixed;
-}
-
-.w-10 {
-    width: 2.5rem; 
-}
-
-.h-10 {
-    height: 2.5rem; 
-}
-.bottom-20 {
-    bottom: 5rem;
-}
-a {
-    color: inherit;
-    text-decoration: inherit;
-}
-
-#whatsappButton {
-    position: fixed;
-    bottom: 20px;
-    right: 5px;
-    z-index: 50;
-}
-@media (max-width: 576px) {
-    #whatsappButton {
-        bottom: 10px;
+/* Media Query para dispositivos móviles */
+@media(max-width: 768px) {
+    .contact {
+        margin: 20px auto; /* Ajustar el margen para dispositivos móviles */
     }
-}*/
 
+    .contact-box-container .contact-box {
+        flex: 1 0 calc(100% - 40px); /* Ocupa todo el ancho en dispositivos móviles */
+        margin: 20px 0;
+    }
+}
 
 
 .whatsapp-button {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 20px;
+    right: 20px;
     z-index: 100;
     transition: ease 0.3s;
 }
 
-
-.whatsapp-icon{
-    width: 80px;
-    height: 80px;
-    transition: ease 1s;
-
+.whatsapp-icon {
+    width: 60px;
+    height: 60px;
+    transition: ease 0.5s;
 }
+/* Media Query para dispositivos móviles */
+@media (max-width: 768px) {
+    .whatsapp-button {
+        bottom: 10px;
+        right: 10px;
+    }
 
-
+    .whatsapp-icon {
+        width: 50px;
+        height: 50px;
+    }
+}
 
 
 
@@ -1022,14 +1048,23 @@ a {
     background-color: var(--main-color);
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between; /* Añadido para espaciado uniforme */
+    padding: 20px; /* Añadido para espaciado interior */
+   
 }
 
 .footer-image .image1{
     width: 16.6%;
     position: relative;
+    /*margin-bottom: 20px; Añadido para espaciado inferior */
+
+    
 }
 .footer-image .image1 img{
     width: 100%;
+    border-radius: 3px; /*8px*/
+   
+    
 }
 
 .footer-image .insta{
@@ -1044,6 +1079,7 @@ a {
     align-items: center;
     transition: .4s ease-in-out;
     opacity: 0;
+    border-radius: 3px; /*8px*/
 }
 .footer-image .insta img{
     width: 30px;
@@ -1061,31 +1097,29 @@ opacity: 1;
 @keyframes instagram {
     0%{
         opacity: 0;
-        margin-bottom: 30px;
+        margin-bottom: 10px;/*30px*/
     }
     100%{
         opacity: 1;
         margin-bottom: 0px;
     }
 }
-
-@media(max-width: 768px){
-    .footer-image .image1{
-        width: calc(100% / 3)
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    .footer-image .image1 {
+        width: calc(100% / 3 - 10px); /* Ajustado para espaciado y bordes */
     }
 }
 
-
-
-@media(max-width: 576px){
-    .footer-image .image1{
-        width: calc(100% / 2)
+@media (max-width: 576px) {
+    .footer-image .image1 {
+        width: calc(100% / 2 - 10px); /* Ajustado para espaciado y bordes */
     }
 }
 
-@media(max-width: 300px){
-    .footer-image .image1{
-        width: 100%; 
+@media (max-width: 300px) {
+    .footer-image .image1 {
+        width: 100%;
     }
 }
 
@@ -1100,8 +1134,9 @@ opacity: 1;
     background: var(--main-color);
     text-align: center;
     color: #fff;
-    padding: .9rem 0;
+    padding: 20px 0;
 }
+/*
 .footer .row {
     width: 100%;
     margin-left: 0;
@@ -1162,19 +1197,21 @@ opacity: 1;
     color: #fff;
 }
 
+*/
+
 .footer .credit {
     width: 100%;
     text-align: center;
     font-size: .9rem;
-    padding: 1rem 0;
     margin: 1rem 0;
+    padding: 1rem 0;
     margin-bottom: 0;
     border-top: .1rem solid #aaa;
     letter-spacing: .1rem;
 }
 
 .footer .credit span {
-    font-size: .9rem;
+    font-weight: bold;
     color: #4abcc6;
 }
 
