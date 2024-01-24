@@ -143,6 +143,13 @@ function myVideo() {
         overs.style.display = "block";
          // Reproducir el video automáticamente al abrir la ventana emergente
          videos.play();
+
+          //evento para cerrar automáticamente la ventana emergente cuando el video termina
+         videos.addEventListener('ended', () => {
+            overs.style.display = "none";
+        });
+
+
     }
     exit.onclick = () => {
         overs.style.display = "none";

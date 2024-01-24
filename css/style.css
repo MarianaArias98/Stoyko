@@ -236,7 +236,7 @@ z-index: -1;
 
 /* Estilos para la colección de imágenes horizontales */
 .big-collection{
-    width: 90%;/*90% NO 100*/
+    width: 100%;/*90% NO 100*/
     margin: 100px auto 0;
     overflow: hidden; 
     background-color: #f8f8f8;
@@ -257,7 +257,7 @@ z-index: -1;
     height: 100%;
     margin: 0 auto;
     overflow: hidden; /* Oculta cualquier desbordamiento horizontal */
-    animation: scrollBanner 80s linear infinite;
+    animation: scrollBanner 20s linear infinite;
 }
 
 @keyframes scrollBanner {
