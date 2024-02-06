@@ -945,73 +945,186 @@ width: 45%;/*35*/
 }
 
 
- /* Estilos para la sección de contacto */
-
-.contact {
+ 
+/* Estilos para la sección de contacto */
+.contact-section {
     width: 90%;
-    margin: 50px auto; /* Ajustar según sea necesario */
+    margin: 50px auto; 
     background-color: #f8f8f8;
-    padding: 50px 0;
+    padding: 50px 20px;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
 }
 
-/* Estilos para el título de la sección de contacto */
+.map-container {
+    flex: 1; /* Ocupa todo el espacio disponible */
+    margin-right: 20px; /* Espacio entre el mapa y la información de contacto */
+}
 
-.contact h1.heading {
-    text-align: center; /* Centra el título */
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.contact-info {
+    flex: 1; /* Ocupa todo el espacio disponible */
+    max-width: 600px; 
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    text-align: center; 
+    margin-bottom: 20px;
+}
+
+.info-item i {
+    color: var(--main-color);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.text {
+    text-align: center;
+}
+
+/* Media Query para hacer el diseño responsive */
+@media screen and (max-width: 768px) {
+    .contact-section {
+        flex-direction: column; 
+    }
+
+    .map-container,
+    .contact-info {
+        max-width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+        margin-right: 0; /* Elimina el espacio entre elementos */
+    
+    }
+}
+
+
+/*SECTION EMAIL*/
+/* Estilos para la sección de consulta */
+
+
+.consultation-section {
+        padding: 47px 0 25px;
+        margin-top: 9px;
+        min-height: 412.2px;
+    }
+
+
+.consultation-heading {
+    text-align: center;
+    margin-bottom: 60px;/**/
+}
+
+.consultation-heading h2 {
+    font-family: Fenix, serif;
     font-weight: 600;
 }
 
-/* Estilos para la disposición de las cajas de contacto */
+#validationMessages {
+    margin-top: 10px;
+    align-items: center;
+    margin-left: 10%;
+    color: #666666;
+}
 
-.contact-box-container {
-    width: 90%;/* Reducimos el ancho 93% del contenedor a 90 */
-    max-width: 1200px;
-    margin: 0 auto; /* Centramos el contenedor */
+.validation-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: justify; 
+}
+
+.validation-item {
+    padding: 4px;
+    margin-bottom: 4px;
+    position: relative; 
+    
+}
+
+.validation-item::before {
+    content: '•'; /* Utilizo un punto como viñeta gg */
+    color: black; 
+    font-size: 1.4em; /* Tamaño del punto */
+    margin-right: 8px; /* Espaciado entre la viñeta y el texto */
+    position: absolute;
+    left: -15px; 
+    top: -3px;
+    
+}
+
+.validation-intro {
+    margin-bottom: 10px;
+    align-items: center;
+    text-align: justify; 
+}
+
+
+.consultation-form {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around; /* Distribuye los elementos horizontalmente */
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Estilos para las cajas de contacto */
-.contact-box-container .contact-box {
-    flex: 1 0 calc(30% - 20px); /* Ajusta el espacio entre las cajas y la anchura */
-    margin: 20px;
-    box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .2);
-    border-radius: .5rem;
+.form-group label {
+    display: none;
+}
+
+.input,
+.textarea {
+    width: 48%;
+    height: 50px;
+    box-sizing: border-box;
+    background-color:   #f8f8f8;
+    border: none;
+    
+}
+
+.textarea{
+    width: 100%;
+    height: 90%;
+}
+
+.input:focus,
+.textarea:focus {
+    outline: none; /* Elimina el contorno al hacer clic en el campo */
+}
+
+
+.captcha-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto; 
+    margin-right: 10px;
+}
+
+.input.contact-captcha {
     text-align: center;
-    padding: 20px;
+    margin-left: auto; 
+}
+
+#captcha::placeholder {
+    color: transparent;
+    
+}
+
+.submit-button {
     background-color: #fff;
-}
-.contact-box-container .contact-box i {
-    color: var(--main-color); 
-    font-size: 2rem; /*tamaño del ícono */
-}
-.contact-box-container .contact-box h3 {
-    font-size: 1.2rem; /* Tamaño de texto */
-    color: #333; 
-    margin: 1rem 0; 
-}
-.contact-box-container .contact-box a {
-    text-decoration: none; /* Elimina el subrayado predeterminado */
-    color: #333; /* Color del texto del enlace */
-    font-weight: 600; /* texto  más audaz */
-}
-
-.contact-box-container .contact-box a:hover {
-    text-decoration: underline; /* Subrayado al pasar el cursor sobre el enlace */
-    color: var(--main-color); /* Cambia el color del texto al pasar el cursor */
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+    padding: 10px 20px;
+    border-radius: 3px;
     cursor: pointer;
-}
-/* Media Query para dispositivos móviles */
-@media(max-width: 768px) {
-    .contact {
-        margin: 20px auto; /* Ajustar el margen para dispositivos móviles */
-    }
-
-    .contact-box-container .contact-box {
-        flex: 1 0 calc(100% - 40px); /* Ocupa todo el ancho en dispositivos móviles */
-        margin: 20px 0;
-    }
 }
 
 
