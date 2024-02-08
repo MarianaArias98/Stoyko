@@ -114,9 +114,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
     // Obtén los elementos de los iconos de corazón
     var heartIcons = document.querySelectorAll(".fa-heart");

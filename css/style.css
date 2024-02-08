@@ -990,6 +990,14 @@ width: 45%;/*35*/
     text-align: center;
 }
 
+.contact-link {
+    color: black;
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
 /* Media Query para hacer el diseño responsive */
 @media screen and (max-width: 768px) {
     .contact-section {
@@ -1141,6 +1149,7 @@ width: 45%;/*35*/
     height: 60px;
     transition: ease 0.5s;
 }
+
 /* Media Query para dispositivos móviles */
 @media (max-width: 768px) {
     .whatsapp-button {
@@ -1180,12 +1189,13 @@ width: 45%;/*35*/
     
 }
 
-.footer-image .insta{
+.footer-image .insta,
+.footer-image .facebook {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 99%;
+    height: 99%; 
     background: rgba(0,0,0,.5);
     display: flex;
     justify-content: center;
@@ -1194,18 +1204,30 @@ width: 45%;/*35*/
     opacity: 0;
     border-radius: 3px; /*8px*/
 }
+
+.footer-image .image1:hover .insta,
+.footer-image .image1:hover .facebook {
+    opacity: 1;
+}
+
+.footer-image .image1:hover .insta img,
+.footer-image .image1:hover .facebook img {
+    animation: instagram .5s ease-in-out;
+}
+
 .footer-image .insta img{
     width: 30px;
     cursor: pointer;
+    
+   
+}
+.footer-image .facebook img {
+    width: 45px;
+    cursor: pointer;
+   
+   
 }
 
-.footer-image .image1:hover .insta{
-opacity: 1;
-}
-    
-.footer-image .image1:hover .insta img{
-    animation: instagram .5s ease-in-out;
-}
 
 @keyframes instagram {
     0%{
@@ -1249,68 +1271,7 @@ opacity: 1;
     color: #fff;
     padding: 20px 0;
 }
-/*
-.footer .row {
-    width: 100%;
-    margin-left: 0;
-    padding: 1rem;
-}
-.footer .row .col-md-3 {
-    margin-right: auto;
-}
-.footer .row .col-md-3 img {
-    width: 200px;
-    height: auto;
-    text-align: center;
-}
-.footer h2 {
-    font-size: 1.5rem;
-}
-.footer p {
-    font-size: 0rem;
-    
-}
-.footer .list {
-    display: flex;
-    flex-flow: column;
-}
-.footer .list a {
-    color: #ccc;
-    font-size: 1.2rem;
-}
 
-.footer .letter p {
-    font-size: 1.2rem;
-}
-
-.footer .letter input[type="email"] {
-    outline: none;
-    border: none;
-    background: none;
-    padding: 0 1rem;
-    color: #fff;
-    height: 2.5rem;
-    width: 100%;
-    border: .1rem solid #fff;
-    font-size: 1.3rem;
-    text-align: center;
-}
-
-.footer .letter input[type="submit"] {
-    outline: none;
-    border: none;
-    background: #fff;
-    margin: 1rem 0;
-    width: 8rem;
-    font-size: 1.1rem;
-}
-
-.footer .letter input[type="submit"]:hover {
-    background: var(--main-color);
-    color: #fff;
-}
-
-*/
 
 .footer .credit {
     width: 100%;
@@ -1329,56 +1290,3 @@ opacity: 1;
 }
 
 
-/*
-footer{
-    background-color: var(--main-color);
-}
-
-
-.footerContainer{
-    width: 100%;
-    padding: 70px 30px 20px;
-}
-
-.socialIcons{
-    display: flex;
-    justify-content: center;
-}
-
-.socialIcons a{
-    text-decoration: none;
-    padding: 10px;
-    background-color: white;
-    margin: 10px;
-    border-radius: 50%;
-}
-
-.socialIcons a i{
-    font-size: 2em;
-    color: var(--main-color);
-    opacity: 0.9;
-}
-
-.socialIcons a:hover{
-    background-color: #DDD;
-    transition: 0.5s;
-}
-
-
-
-.footercredit {
-    width: 100%;
-    text-align: center;
-    font-size: .5rem;
-    padding: 1rem 0;
-    margin: 1rem 0;
-    margin-bottom: 0;
-    border-top: .1rem solid #aaa;
-    letter-spacing: .1rem;
-}
-
-.footercredit .credit span {
-    font-size: .9rem;
-    color: #DDD;
-}
-*/
