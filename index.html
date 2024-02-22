@@ -17,6 +17,9 @@
     <!-- Magnific Popup -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
 
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <!-- Custom Styles -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -43,16 +46,9 @@
             <img id="bar" src="images/menu.nav2.png" alt="">
         </div>
 
-
-        <!-- Ícono de menú en dispositivos móviles 
-        <div class="menu-icon" id="fa-bars">
-            <i class="fas fa-bars"></i>
-        </div>
-        -->
-
     </header>
 
-    <!-- Sección principal con imagen de fondo -->
+    <!-- Sección principal con imagen de fondo 
     <section class="big-bg" id="home">
         <div class="bg-content">
             <h1>Stoyko<br> Pisos y Revestimientos</h1>
@@ -63,6 +59,74 @@
             </div>
         </div>
     </section>
+-->
+
+    <section class="home" id="home">
+
+        <div class="swiper home-slider">
+
+            <div class="swiper-wrapper">
+
+                <!-- Cada slide del slider   space-between="30" pagination="true" pagination-clickable="true" -->
+
+                <div class="swiper-slide">
+                    <div class="big-bg"
+                        style="background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url(/images/rev3.avif);">
+                        <div class="content">
+                            <h1>Stoyko <br> Pisos y Revestimientos</h1>
+                            <hr> 
+                            <p>Descubre la excelencia en calidad y diseño para transformar tus espacios</p>
+                            <div class="bg-link">
+                                <a href="#productos">Explora nuestros productos</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <div class="big-bg"
+                        style=" background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url(/images/revestimiento1.avif);">
+                        <div class="content">
+                            <h1>Diseños que inspiran</h1>
+                            <hr>
+                            <p>Explora un mundo de posibilidades con nuestra colección exclusiva</p>
+                            <div class="bg-link">
+                                <a href="#productos">Explora nuestros productos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="big-bg"
+                        style=" background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url(/images/rev2.avif);">
+                        <div class="content">
+                            <h1>Estilo que perdura en el tiempo </h1>
+                            <hr>
+                            <p >Descubre la esencia del buen gusto en cada detalle</p>
+                            <div class="bg-link">
+                                <a href="#productos">Explora nuestros productos</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Agrega la paginación del slider -->
+            <div class="swiper-pagination"></div>
+            
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+
+        </div>
+    </section>
+
+
+
+
 
     <!-- Sección de colección de imágenes horizontales -->
     <section class="big-collection">
@@ -129,7 +193,7 @@
                     <a href="#">Ceramicas</a>
                 </div>
             </div>
-           
+
 
         </div>
     </section>
@@ -258,7 +322,7 @@
     <!--end productos-->
 
 
-    
+
     <!--start section four Caracteristicas-->
     <section class="big-product" id="caract">
         <div class="product-title">
@@ -283,7 +347,7 @@
                         <i class="fa fa-search"></i>
                     </div>
                 </div>
-                
+
             </div>
 
             <div class="product-one">
@@ -297,7 +361,7 @@
                         <i class="fa fa-search"></i>
                     </div>
                 </div>
-               
+
             </div>
 
             <div class="product-one">
@@ -311,7 +375,7 @@
                         <i class="fa fa-search"></i>
                     </div>
                 </div>
-                
+
             </div>
 
             <div class="product-one">
@@ -325,7 +389,7 @@
                         <i class="fa fa-search"></i>
                     </div>
                 </div>
-              
+
             </div>
 
             <div class="product-one">
@@ -339,7 +403,7 @@
                         <i class="fa fa-search"></i>
                     </div>
                 </div>
-               
+
             </div>
 
             <div class="product-one">
@@ -353,7 +417,7 @@
                         <i class="fa fa-search"></i>
                     </div>
                 </div>
-               
+
             </div>
 
 
@@ -368,7 +432,7 @@
                         <i class="fa fa-search"></i>
                     </div>
                 </div>
-               
+
             </div>
 
             <div class="product-one">
@@ -382,7 +446,7 @@
                         <i class="fa fa-search"></i>
                     </div>
                 </div>
-    
+
             </div>
 
 
@@ -413,18 +477,22 @@
     <!--end section five-->
 
 
-    <section class="contact-section"  id="contact" >
+    <section class="contact-section" id="contact">
         <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2074.050149118713!2d-65.5844504939022!3d-27.34844189196097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9423cf5a3843ec37%3A0x51e11ab71af1157e!2zRXNwYcOxYSA2OTIsIFQ0MTQ2IENvbmNlcGNpw7NuLCBUdWN1bcOhbg!5e0!3m2!1ses!2sar!4v1706298483661!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2074.050149118713!2d-65.5844504939022!3d-27.34844189196097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9423cf5a3843ec37%3A0x51e11ab71af1157e!2zRXNwYcOxYSA2OTIsIFQ0MTQ2IENvbmNlcGNpw7NuLCBUdWN1bcOhbg!5e0!3m2!1ses!2sar!4v1706298483661!5m2!1ses!2sar"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 
         <div class="contact-info">
             <div class="info-item">
-                
+
                 <i class="fa fa-map-marker-alt"></i>
                 <div class="text">
                     <h3>DIRECCIÓN</h3>
-                    <p>Nuestro <strong>Local</strong> se encuentra en  calle<strong> España 692</strong><br>Concepción-Tucumán</p>
+                    <p>Nuestro <strong>Local</strong> se encuentra en calle<strong> España
+                            692</strong><br>Concepción-Tucumán</p>
                 </div>
             </div>
 
@@ -432,21 +500,23 @@
                 <i class="fa fa-phone"></i>
                 <div class="text">
                     <h3>TELÉFONO / WHATSAPP</h3>
-                    <p>Comunicate con nosotros de Lunes a Viernes de 08:30 a 12:30 y 15:00 a 19:00 hs <br><strong><a href="tel:+543865690336" class="contact-link">+54 3865-690336</a></strong></p>
+                    <p>Comunicate con nosotros de Lunes a Viernes de 08:30 a 12:30 y 15:00 a 19:00 hs <br><strong><a
+                                href="tel:+543865690336" class="contact-link">+54 3865-690336</a></strong></p>
                 </div>
             </div>
 
             <div class="info-item">
-                <i class="fa fa-envelope" ></i>
+                <i class="fa fa-envelope"></i>
                 <div class="text">
                     <h3>MAIL</h3>
-                    <p>Escribinos por mail&nbsp;<br><strong><a href="mailto:stoyko.contactos@gmail.com" class="contact-link">stoyko.contactos@gmail.com</a></strong></p>
+                    <p>Escribinos por mail&nbsp;<br><strong><a href="mailto:stoyko.contactos@gmail.com"
+                                class="contact-link">stoyko.contactos@gmail.com</a></strong></p>
                 </div>
             </div>
 
         </div>
     </section>
-    
+
 
 
 
@@ -461,8 +531,8 @@
 
         <div class="consultation-form">
 
-            <form action="https://formspree.io/f/mgegadyg" method="post" 
-            class="contact-form"  id="myForm" autocomplete="off">
+            <form action="https://formspree.io/f/mgegadyg" method="post" class="contact-form" id="myForm"
+                autocomplete="off">
 
                 <div class="form-group">
                     <label for="name"></label>
@@ -474,32 +544,34 @@
 
                 <div class="form-group">
                     <label for="message"></label>
-                    <textarea id="message" class="textarea" name="message" rows="6" placeholder="Mensaje" required></textarea>
+                    <textarea id="message" class="textarea" name="message" rows="6" placeholder="Mensaje"
+                        required></textarea>
                 </div>
 
                 <div class="form-group">
                     <div class="captcha-container">
-                        <span id="captcha-question"  class="captcha-question"></span> 
-                        <input type="text" size="2" id="captcha" class="input contact-captcha" name="captcha"  placeholder="captcha"  required>
+                        <span id="captcha-question" class="captcha-question"></span>
+                        <input type="text" size="2" id="captcha" class="input contact-captcha" name="captcha"
+                            placeholder="captcha" required>
                     </div>
-    
+
                     <button type="submit" id="submit_button" class="submit-button" name="submit_button">Enviar</button>
 
-                    
+
                 </div>
-        
-            
+
+
             </form>
         </div>
     </section>
 
     <section id="whatsappButton" class="whatsapp-button">
-        <a href="https://api.whatsapp.com/send?phone=3865690336" target="_blank" >
+        <a href="https://api.whatsapp.com/send?phone=3865690336" target="_blank">
             <img src="images/wsp.Logo-removebg.png" alt="WhatsApp" class="whatsapp-icon">
         </a>
     </section>
-    
-    
+
+
 
 
 
@@ -563,7 +635,7 @@
     </section>
 
     <section class="container-fluid footer">
-       
+
         <h1 class="credit">Created by <span>M.A</span> | &copy; 2024 All rights reserved </h1>
 
     </section>
@@ -579,6 +651,10 @@
         crossorigin="anonymous"></script>
     <!-- jquery file link-->
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--Swiper-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <!-- Script de Magnific Popup (cargar después de jQuery) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <!--script personalizado-->

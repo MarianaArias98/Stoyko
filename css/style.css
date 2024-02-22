@@ -20,9 +20,7 @@ html{
     margin: 0;
     height: 2000px; 
 }
-body {
-    margin: 0;
-}
+
 
 
 /* Estilos para el encabezado */
@@ -82,17 +80,7 @@ header .bars img{
 
 }
 
-/* Estilos para el ícono del menú en el encabezado 
-header .menu-icon{
-    font-size: 30px;
-    color: #000;
-    cursor: pointer;
-    display: none;
-}
-header .menu-icon.active {
-    cursor: pointer;
-}
-*/
+
 header.active{
     background: #fff;
     box-shadow: 1px 0px 0px #DDD;
@@ -112,8 +100,8 @@ header.active ul li a{
     header .navigation{
         position: absolute;
         top: 75px;
-        width: 50%; /* Cambia el ancho al 100% */
-        right: -50%; /* Inicialmente fuera de la pantalla */
+        width: 50%; 
+        right: -50%; 
         height: 92vh;
         background: #fff;
         display: flex;
@@ -135,18 +123,15 @@ header.active ul li a{
 }
 
 /* Estilos para las secciones con imagen de fondo */
-#home {
-    margin: 0;
-}
-.big-bg{
-    background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url(/images/rev3.avif);
+
+.home-slider .swiper-slide .big-bg {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
-    min-height: 100vh;/*height: 100vh;*/
-    padding: 20px; /* Añadir relleno para evitar que el contenido toque los bordes */
-    box-sizing: border-box; /* Asegurarse de que el relleno se incluya en el ancho total */
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
     position: relative;
     display: flex;
     justify-content: center;
@@ -154,85 +139,114 @@ header.active ul li a{
     text-align: center;
 }
 
-.big-bg .bg-content{
+.home-slider .swiper-slide .big-bg {
     color: #fff;
     width: 100%;
     max-width: 100%; /* 800px Ajustar según sea necesario para mantener el diseño deseado */
     margin: 0 auto; /* Centrar el contenido */
 }
 
-.big-bg .bg-content h1{
+/* Estilos para el contenido de cada slide */
+.home-slider .swiper-slide .big-bg h1 {
     font-size: 60px;
-
+    /*margin-bottom: 10px;*/
 }
 
-.big-bg .bg-content hr{
-background: #fff;
-height: 1px;
-width: 50%;
-margin: 15px auto;
+.home-slider .swiper-slide .big-bg hr {
+    background: #fff;
+    height: 1px;
+    width: 50%;
+    margin: 15px auto;
 }
 
-.big-bg .bg-content .bg-link{
+.home-slider .swiper-slide .big-bg p {
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.home-slider .swiper-slide .big-bg .bg-link{
     margin-top: 20px;
-} 
+}
 
-.big-bg .bg-content .bg-link a{
-text-decoration: none;
-color: #fff;
-font-size: 17px;
-text-transform: capitalize;
-padding: 12px 20px;
-border: 2px solid #fff;
-display: inline-block ;
-position: relative;
-overflow: hidden ;
-z-index: 1;
+.home-slider .swiper-slide .big-bg .bg-link a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+    text-transform: capitalize;
+    padding: 12px 20px;
+    border: 2px solid #fff;
+    display: inline-block;
+    position: relative;
+    overflow: hidden ;
+    z-index: 1;
 }
-.bg-link a::before{
-content: "";
-position: absolute;
-top: 0px;
-left: -100%;
-background: #145533;
-width: 100%;
-height: 100%;
-transition: .4s ease-in-out;
-z-index: -1;
+
+.home-slider .swiper-slide .big-bg .bg-link a::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: -100%;
+    background: #145533;
+    width: 100%;
+    height: 100%;
+    transition: .4s ease-in-out;
+    z-index: -1;
 }
-.bg-link a:hover::before{
+
+.home-slider .swiper-slide .big-bg .bg-link a:hover::before {
     left: 0%;
 }
 
-/* Ajustes para la sección .big-bg en pantallas más pequeñas */
+.swiper-button-next,
+.swiper-button-prev{
+    color: white; 
+    font-size: 24px; 
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    color: var(--main-color); 
+}
+/* Estilos para la paginación del swiper */
+.swiper-pagination-bullet {
+    background-color: black; 
+    width: 12px; 
+    height: 12px;
+    margin: 0 8px; 
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--main-color);
+}
+
+
+/* Ajustes para la sección .home-slider en pantallas más pequeñas */
 @media (max-width: 438px) {
-    .big-bg .bg-content h1 {
-        font-size: 40px; /* Reduzca el tamaño del texto */
+    .home-slider .swiper-slide .big-bg h1 {
+        font-size: 40px;
     }
-    .big-bg .bg-content .bg-link a {
-        font-size: 14px; /* Reduzca el tamaño del enlace */
+    .home-slider .swiper-slide  .big-bg .bg-link a {
+        font-size: 14px;
     }
 }
 
 /* Media query para Samsung Galaxy Fold */
 @media (max-width: 280px) and (max-height: 653px) {
-    /* Ajustes para la sección .big-bg */
-    .big-bg {
-        padding: 10px; /* Ajusta el relleno según sea necesario */
+    .home-slider .swiper-slide .big-bg {
+        padding: 10px;
     }
-    .big-bg .bg-content h1 {
-        font-size: 30px; /* Ajusta el tamaño de la fuente según sea necesario */
+    .home-slider .swiper-slide .big-bg h1 {
+        font-size: 30px;
     }
-    .big-bg .bg-content p {
-        font-size: 14px; /* Ajusta el tamaño del texto según sea necesario */
+    .home-slider .swiper-slide .big-bg p {
+        font-size: 14px;
     }
-    .big-bg .bg-content .bg-link a {
-        font-size: 12px; /* Ajusta el tamaño del enlace según sea necesario */
-        padding: 8px 15px; /* Ajusta el relleno del enlace según sea necesario */
+    .home-slider .swiper-slide .big-bg .bg-link a {
+        font-size: 12px;
+        padding: 8px 15px;
     }
-
-    
 }
+
 
 /* Estilos para la colección de imágenes horizontales */
 .big-collection{

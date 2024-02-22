@@ -1,3 +1,4 @@
+
 function myNav(){
     let bar = document.getElementById("bar");
     let nav = document.querySelector(".navigation");
@@ -12,6 +13,8 @@ function myNav(){
     }
 }
 myNav();
+
+
 /*function myNav(){
     let bar = document.getElementById('fa-bars');
     let nav = document.querySelector('.navigation');
@@ -42,6 +45,21 @@ function myHeader(){
     })
 }
 myHeader();
+
+
+// Inicializa Swiper.js
+var swiper = new Swiper('.home-slider', {
+    spaceBetween: 30, 
+    loop: true, 
+    pagination: {
+        el: '.swiper-pagination', 
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next', 
+        prevEl: '.swiper-button-prev', 
+    },
+});
 
 
 // JavaScript para la galería Magnific Popup
